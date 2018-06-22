@@ -8,24 +8,28 @@ using System.Text;
 namespace WCFCalculator
 {
     // NOTA: è possibile utilizzare il comando "Rinomina" del menu "Refactoring" per modificare il nome di classe "Service1" nel codice e nel file di configurazione contemporaneamente.
+    //public delegate int Del(int P1, int P2);
+
     public class Service1 : IService1
     {
-        public string GetData(int value)
+        //public int Somma(int Num1, int Num2) => Num1 + Num2;
+        //public Del Somma = (int Num1, int Num2) => Num1 + Num2;
+        public int Somma(int Num1, int Num2)
         {
-            return string.Format("You entered: {0}", value);
+            return Num1 + Num2;
         }
-
-        public CompositeType GetDataUsingDataContract(CompositeType composite)
+        public int Sottrazione(int Num1, int Num2)
         {
-            if (composite == null)
-            {
-                throw new ArgumentNullException("composite");
-            }
-            if (composite.BoolValue)
-            {
-                composite.StringValue += "Suffix";
-            }
-            return composite;
+            return Num1 - Num2;
+        }
+        public int Moltiplicazione(int Num1, int Num2)
+        {
+            return Num1 * Num2;
+        }
+        public int Divisione(int Num1, int Num2)
+        {
+            if(Num2 != 0) return Num1 / Num2;
+            return 0;
         }
     }
 }

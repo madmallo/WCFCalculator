@@ -12,10 +12,16 @@ namespace WCFCalculator
     public interface IService1
     {
         [OperationContract]
-        string GetData(int value);
+        int Somma(int Num1, int Num2);
 
         [OperationContract]
-        CompositeType GetDataUsingDataContract(CompositeType composite);
+        int Sottrazione(int Num1, int Num2);
+
+        [OperationContract]
+        int Moltiplicazione(int Num1, int Num2);
+
+        [OperationContract]
+        int Divisione(int Num1, int Num2);
 
         // TODO: aggiungere qui le operazioni del servizio
     }
